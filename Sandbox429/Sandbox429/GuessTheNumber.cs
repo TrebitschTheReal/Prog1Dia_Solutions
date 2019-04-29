@@ -11,11 +11,21 @@ namespace GuessGame
         private static Random r = new Random();
         private int inputNumber;
         private int generatedNumber = r.Next(1,11);
-        private string answer = "";
+        private int tries = 0;
 
         public int GeneratedNumber
         {
             get { return generatedNumber; }
+        }
+
+        public void Counter()
+        {
+            tries++;
+        }
+
+        public int Tries
+        {
+            get { return tries; }
         }
 
         public void InputNumber(int inputNumber)

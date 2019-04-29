@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace Sandbox429
+namespace GuessGame
 {
     class Program
     {
@@ -9,10 +9,12 @@ namespace Sandbox429
             int inputNum;
             do
             {
+                guessgame.Counter();
                 inputNum = int.Parse(Console.ReadLine());
                 guessgame.InputNumber(inputNum);
                 guessgame.Result();
             } while (inputNum != guessgame.GeneratedNumber);
+            Console.WriteLine(guessgame.Tries + ". próbálkozásra!");
             Console.ReadKey();
         }
     }
