@@ -14,7 +14,7 @@ namespace GuessGame
                 guessgame.InputNumber(inputNum);
                 guessgame.Result();
             } while (inputNum != guessgame.GeneratedNumber);
-            Console.WriteLine(guessgame.Tries + ". próbálkozásra!");
+            Console.WriteLine("{0}. próbálkozásra!", guessgame.Tries);
             Console.ReadKey();
         }
     }
