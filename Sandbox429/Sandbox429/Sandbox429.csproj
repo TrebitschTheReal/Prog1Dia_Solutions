@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{BA3FCE2B-709A-412F-B7FF-242F5E7B85D2}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>Sandbox429</RootNamespace>
-    <AssemblyName>Sandbox429</AssemblyName>
+    <RootNamespace>GuessGame</RootNamespace>
+    <AssemblyName>GuessGame</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
