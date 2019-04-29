@@ -9,8 +9,8 @@ namespace GuessGame
             int inputNum;
             do
             {
-                guessgame.Counter();
                 inputNum = int.Parse(Console.ReadLine());
+                guessgame.Counter();
                 guessgame.InputNumber(inputNum);
                 guessgame.Result();
             } while (inputNum != guessgame.GeneratedNumber);
