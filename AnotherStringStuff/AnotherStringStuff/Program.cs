@@ -19,7 +19,18 @@ namespace AnotherStringStuff
             Console.WriteLine("Számok száma: {0}", txtreader.NumberOfNumbers);
             Console.WriteLine("Speciális karakterek száma: {0}", txtreader.NumberOfSpecialCharacters);
 
+
+
             Console.ReadKey();
         }
     }
 }
+
+
+/*
+ * Szó: az a karaktersorozat, ami egy space vagy egy speciális karakter között áll, vagy két space között áll
+ * szavakat egy string tömbbe, annyi elemű legyen a tömb ahány szó van. minden egyes elem legyen egyenlő egy szóval. amelyik lengthje a leghosszabb
+ * (maximumkiválasztás) az a leghosszabb szó
+ * 
+ * leggyakoribb szó ugyan így
+ */
