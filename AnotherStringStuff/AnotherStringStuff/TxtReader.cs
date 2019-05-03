@@ -32,7 +32,7 @@ namespace AnotherStringStuff
 
         private int LineCounter()
         {
-            StreamReader sr = new StreamReader(@"E:\maszkolgatunk\rimworld.txt", Encoding.Default);
+            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\rimworld.txt", Encoding.Default);
             while (!sr.EndOfStream)
             {
                 sr.ReadLine();
@@ -90,7 +90,7 @@ namespace AnotherStringStuff
         }
         private string GenerateFullText()
         {
-            StreamReader sr = new StreamReader(@"E:\maszkolgatunk\rimworld.txt", Encoding.Default);
+            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\rimworld.txt", Encoding.Default);
             while (!sr.EndOfStream)
             {
                 string textPart = sr.ReadLine();
@@ -102,7 +102,7 @@ namespace AnotherStringStuff
         private void GenerateTextWithLettersAndNumbersOnly()
         {
             string newText = fullText;
-            var sw = new StreamWriter(@"E:\maszkolgatunk\cucc.txt");
+            var sw = new StreamWriter(@"E:\maszekolgatunk\cucc.txt");
 
             foreach(char ch in newText)
             {
