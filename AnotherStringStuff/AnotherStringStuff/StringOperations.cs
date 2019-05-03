@@ -5,7 +5,7 @@ using System.Collections;
 
 namespace AnotherStringStuff
 {
-    class StringOperations
+    class StringOperations : OperationsWithWords
     {
         protected ArrayList words = new ArrayList();
         protected string fullText = "";
@@ -13,13 +13,13 @@ namespace AnotherStringStuff
         private const string numbers = "0123456789";
         private const string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         protected int numberOfWordsInText = 0;
-        protected string[] allWords = new string[100];
 
         protected StringOperations()
         {
             this.fullText = GenerateFullText();
             this.numberOfWordsInText = CountTheWordsInText();
-            this.allWords = words.CopyTo(allWords);
+            GetTheWordsFromText();
+            string[] allWords = (string[])words.ToArray(typeof(string));
         }
 
         protected int CountTheWordsInText()
@@ -62,7 +62,6 @@ namespace AnotherStringStuff
                 {
                     if (lettersInWord >= 2)
                     {
-                        numberOfWordsInText++;
                         indexCounter++;
                         words.Add(wordFromText);
 
@@ -123,6 +122,12 @@ namespace AnotherStringStuff
         protected void GetTheText(string fullText)
         {
             this.fullText = fullText;
+        }
+
+        protected void WriteOutTheWords()
+        {
+
+
         }
 
     }
