@@ -1,24 +1,25 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
 using System.IO;
+using System.Collections;
 
 namespace AnotherStringStuff
 {
     class StringOperations
     {
+        protected ArrayList words = new ArrayList();
         protected string fullText = "";
         private const string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private const string numbers = "0123456789";
         private const string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         protected int numberOfWordsInText = 0;
+        protected string[] allWords = new string[100];
 
         protected StringOperations()
         {
             this.fullText = GenerateFullText();
             this.numberOfWordsInText = CountTheWordsInText();
+            this.allWords = words.CopyTo(allWords);
         }
 
         protected int CountTheWordsInText()
@@ -63,7 +64,7 @@ namespace AnotherStringStuff
                     {
                         numberOfWordsInText++;
                         indexCounter++;
-                        wordsInText[indexCounter] = wordFromText;
+                        words.Add(wordFromText);
 
                         lettersInWord = 0;
                         wordFromText = "";
@@ -72,6 +73,7 @@ namespace AnotherStringStuff
                     wordFromText = "";
                 }
             }
+            
         }
         protected string GenerateFullText()
         {
