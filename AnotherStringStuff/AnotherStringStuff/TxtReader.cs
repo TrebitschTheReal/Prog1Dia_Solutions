@@ -70,13 +70,7 @@ namespace AnotherStringStuff
         }
         private int CharacterCounter()
         {
-            StreamReader sr = new StreamReader(@"E:\maszkolgatunk\rimworld.txt", Encoding.Default);
-            while (!sr.EndOfStream)
-            {
-                sr.ReadLine();
-                numberOfCharacters = fullText.Length;
-            }
-            sr.Close();
+            numberOfCharacters = fullText.Length;
             return numberOfCharacters;
         }
         private int SpecialCharacterCounter()
