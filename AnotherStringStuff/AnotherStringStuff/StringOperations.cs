@@ -8,9 +8,30 @@ namespace AnotherStringStuff
 {
     class StringOperations
     {
+        private string fullText = "";
         private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private string numbers = "123456789";
         private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
+        protected static int numberOfWordsInText = 0;
+        private string[] wordsInText = new string[numberOfWordsInText];
+
+
+        protected int CountTheWordsInText(string fulltext)
+        {
+            foreach(char ch in fulltext)
+            {
+                if (!IsLetter(ch))
+                {
+                    numberOfWordsInText++;
+                }
+            }
+            
+return numberOfWordsInText;
+        }
+        protected string PutTheWordsToArray()
+        {
+
+        }
 
         protected bool IsLetter(char character)
         {
@@ -44,6 +65,10 @@ namespace AnotherStringStuff
                 }
             }
             return false;
+        }
+        protected void GetTheText(string fullText)
+        {
+            this.fullText = fullText;
         }
 
     }

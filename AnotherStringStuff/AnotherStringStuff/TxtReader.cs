@@ -24,6 +24,7 @@ namespace AnotherStringStuff
             this.numberOfLetters = LetterCounter();
             this.numberOfNumbers = NumberCounter();
             this.numberOfSpecialCharacters = SpecialCharacterCounter();
+            GetTheText(fullText);
         }
 
         private int LineCounter()
