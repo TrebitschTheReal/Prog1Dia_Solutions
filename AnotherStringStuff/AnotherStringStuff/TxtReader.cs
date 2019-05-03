@@ -15,6 +15,7 @@ namespace AnotherStringStuff
         private int numberOfNumbers = 0;
         private int numberOfCharacters = 0;
         private int numberOfSpecialCharacters = 0;
+        private int wordsInText = 0;
 
         public TxtReader()
         {
@@ -25,6 +26,7 @@ namespace AnotherStringStuff
             this.numberOfNumbers = NumberCounter();
             this.numberOfSpecialCharacters = SpecialCharacterCounter();
             GetTheText(fullText);
+            wordsInText = CountTheWordsInText(simpleTextForTest);
         }
 
         private int LineCounter()
@@ -126,6 +128,10 @@ namespace AnotherStringStuff
         public int NumberOfSpecialCharacters
         {
             get { return numberOfSpecialCharacters; }
+        }
+        public int WordsInText
+        {
+            get { return wordsInText; }
         }
     }
 }

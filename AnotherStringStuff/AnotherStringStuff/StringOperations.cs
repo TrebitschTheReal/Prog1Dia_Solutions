@@ -9,6 +9,7 @@ namespace AnotherStringStuff
     class StringOperations
     {
         private string fullText = "";
+        protected string simpleTextForTest = "Egy,. ket , ha. negGysd, aZ. ";
         private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private string numbers = "123456789";
         private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
@@ -16,21 +17,27 @@ namespace AnotherStringStuff
         private string[] wordsInText = new string[numberOfWordsInText];
 
 
-        protected int CountTheWordsInText(string fulltext)
+        public int CountTheWordsInText(string someText)
         {
-            foreach(char ch in fulltext)
+            int lettersInWord = 0;
+
+            foreach (char ch in someText)
             {
-                if (!IsLetter(ch))
+                if (IsLetter(ch))
                 {
-                    numberOfWordsInText++;
+                    lettersInWord++;
+                }
+                else
+                {
+                    if (lettersInWord >= 2)
+                    {
+                        numberOfWordsInText++;
+                        lettersInWord = 0;
+                    }
+                    lettersInWord = 0;
                 }
             }
-            
-return numberOfWordsInText;
-        }
-        protected string PutTheWordsToArray()
-        {
-
+            return numberOfWordsInText;
         }
 
         protected bool IsLetter(char character)
