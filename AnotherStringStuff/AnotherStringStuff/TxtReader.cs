@@ -27,6 +27,7 @@ namespace AnotherStringStuff
             this.numberOfLetters = LetterCounter();
             this.numberOfNumbers = NumberCounter();
             this.numberOfSpecialCharacters = SpecialCharacterCounter();
+            GenerateTextWithLettersAndNumbersOnly();
         }
 
         private int LineCounter()
@@ -97,6 +98,43 @@ namespace AnotherStringStuff
             }
             sr.Close();
             return fullText;
+        }
+        private void GenerateTextWithLettersAndNumbersOnly()
+        {
+            string newText = fullText;
+            var sw = new StreamWriter(@"E:\maszkolgatunk\cucc.txt");
+
+            foreach(char ch in newText)
+            {
+                if(IsLetter(ch) || IsNumber(ch))
+                {
+                    sw.Write(ch);
+                }
+            }
+
+            sw.Close();
+        }
+        private bool IsLetter(char character)
+        {
+            for (int i = 0; i < letters.Length; i++)
+            {
+                if (character == letters[i] || character == letters.ToUpper()[i])
+                {
+                    return true;
+                }
+            }
+            return false;
+        }
+        private bool IsNumber(char character)
+        {
+            for (int i = 0; i < numbers.Length; i++)
+            {
+                if (character == numbers[i])
+                {
+                    return true;
+                }
+            }
+            return false;
         }
 
         public string FullText
