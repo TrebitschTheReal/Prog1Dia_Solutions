@@ -11,7 +11,7 @@ namespace AnotherStringStuff
     {
         private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private string numbers = "123456789";
-        private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
+        private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         private string fullText = "";
         private int numberOfLines = 0;
         private int numberOfLetters = 0;
