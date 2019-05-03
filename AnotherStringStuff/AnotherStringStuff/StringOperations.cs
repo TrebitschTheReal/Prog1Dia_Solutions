@@ -13,7 +13,7 @@ namespace AnotherStringStuff
         private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private string numbers = "123456789";
         private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
-        protected static int numberOfWordsInText = 0;s
+        protected static int numberOfWordsInText = 0;
         private string[] wordsInText = new string[numberOfWordsInText];
 
 
