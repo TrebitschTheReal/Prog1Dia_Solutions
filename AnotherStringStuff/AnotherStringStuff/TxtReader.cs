@@ -9,25 +9,19 @@ namespace AnotherStringStuff
 {
     class TxtReader : StringOperations
     {
-        private string fullText = "";
         private int numberOfLines = 0;
         private int numberOfLetters = 0;
         private int numberOfNumbers = 0;
         private int numberOfCharacters = 0;
         private int numberOfSpecialCharacters = 0;
-        private int wordsInText = 0;
 
         public TxtReader()
         {
-            this.fullText = GenerateFullText();
             this.numberOfLines = LineCounter();
             this.numberOfCharacters = CharacterCounter();
             this.numberOfLetters = LetterCounter();
             this.numberOfNumbers = NumberCounter();
             this.numberOfSpecialCharacters = SpecialCharacterCounter();
-            GetTheText(fullText);
-            wordsInText = CountTheWordsInText();
-            GetTheWordsFromText();
         }
         public string FullText
         {
@@ -55,7 +49,7 @@ namespace AnotherStringStuff
         }
         public int WordsInText
         {
-            get { return wordsInText; }
+            get { return numberOfWordsInText; }
         }
 
         private int LineCounter()
@@ -107,17 +101,7 @@ namespace AnotherStringStuff
             }
             return numberOfSpecialCharacters;
         }
-        private string GenerateFullText()
-        {
-            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\rimworld.txt", Encoding.Default);
-            while (!sr.EndOfStream)
-            {
-                string textPart = sr.ReadLine();
-                fullText += textPart;
-            }
-            sr.Close();
-            return fullText;
-        }
+
         private void GenerateTextWithLettersAndNumbersOnly()
         {
             string newText = fullText;

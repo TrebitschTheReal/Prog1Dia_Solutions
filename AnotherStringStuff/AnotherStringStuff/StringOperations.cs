@@ -3,16 +3,23 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
 
 namespace AnotherStringStuff
 {
     class StringOperations
     {
-        private string fullText = "";
+        protected string fullText = "";
         private const string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private const string numbers = "0123456789";
         private const string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
-        protected static int numberOfWordsInText = 0;
+        protected int numberOfWordsInText = 0;
+
+        protected StringOperations()
+        {
+            this.fullText = GenerateFullText();
+            this.numberOfWordsInText = CountTheWordsInText();
+        }
 
         protected int CountTheWordsInText()
         {
@@ -65,6 +72,17 @@ namespace AnotherStringStuff
                     wordFromText = "";
                 }
             }
+        }
+        protected string GenerateFullText()
+        {
+            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\rimworld.txt", Encoding.Default);
+            while (!sr.EndOfStream)
+            {
+                string textPart = sr.ReadLine();
+                fullText += textPart;
+            }
+            sr.Close();
+            return fullText;
         }
 
         protected bool IsLetter(char character)
