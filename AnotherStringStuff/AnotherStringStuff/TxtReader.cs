@@ -26,7 +26,36 @@ namespace AnotherStringStuff
             this.numberOfNumbers = NumberCounter();
             this.numberOfSpecialCharacters = SpecialCharacterCounter();
             GetTheText(fullText);
-            wordsInText = CountTheWordsInText(simpleTextForTest);
+            wordsInText = CountTheWordsInText();
+            GetTheWordsFromText();
+        }
+        public string FullText
+        {
+            get { return fullText; }
+        }
+        public int NumberOfLines
+        {
+            get { return this.numberOfLines; }
+        }
+        public int NumberOfCharacters
+        {
+            get { return numberOfCharacters; }
+        }
+        public int NumberOfLetters
+        {
+            get { return numberOfLetters; }
+        }
+        public int NumberOfNumbers
+        {
+            get { return numberOfNumbers; }
+        }
+        public int NumberOfSpecialCharacters
+        {
+            get { return numberOfSpecialCharacters; }
+        }
+        public int WordsInText
+        {
+            get { return wordsInText; }
         }
 
         private int LineCounter()
@@ -105,33 +134,6 @@ namespace AnotherStringStuff
             sw.Close();
         }
 
-        public string FullText
-        {
-            get { return fullText; }
-        }
-        public int NumberOfLines
-        {
-            get { return this.numberOfLines; }
-        }
-        public int NumberOfCharacters
-        {
-            get { return numberOfCharacters; }
-        }
-        public int NumberOfLetters
-        {
-            get { return numberOfLetters; }
-        }
-        public int NumberOfNumbers
-        {
-            get { return numberOfNumbers; }
-        }
-        public int NumberOfSpecialCharacters
-        {
-            get { return numberOfSpecialCharacters; }
-        }
-        public int WordsInText
-        {
-            get { return wordsInText; }
-        }
+
     }
 }

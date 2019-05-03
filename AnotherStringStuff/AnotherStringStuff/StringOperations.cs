@@ -9,19 +9,16 @@ namespace AnotherStringStuff
     class StringOperations
     {
         private string fullText = "";
-        protected string simpleTextForTest = "Egy,. ket , ha. negGysd, aZ. ";
-        private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
-        private string numbers = "123456789";
-        private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
+        private const string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
+        private const string numbers = "0123456789";
+        private const string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         protected static int numberOfWordsInText = 0;
-        private string[] wordsInText = new string[numberOfWordsInText];
 
-
-        public int CountTheWordsInText(string someText)
+        protected int CountTheWordsInText()
         {
             int lettersInWord = 0;
 
-            foreach (char ch in someText)
+            foreach (char ch in fullText)
             {
                 if (IsLetter(ch))
                 {
@@ -38,6 +35,36 @@ namespace AnotherStringStuff
                 }
             }
             return numberOfWordsInText;
+        }
+        protected void GetTheWordsFromText()
+        {
+            string[] wordsInText = new string[numberOfWordsInText];
+            string wordFromText = "";
+            int lettersInWord = 0;
+            int indexCounter = -1;
+
+            foreach (char ch in fullText)
+            {
+                if (IsLetter(ch))
+                {
+                    wordFromText += ch;
+                    lettersInWord++;
+                }
+                else
+                {
+                    if (lettersInWord >= 2)
+                    {
+                        numberOfWordsInText++;
+                        indexCounter++;
+                        wordsInText[indexCounter] = wordFromText;
+
+                        lettersInWord = 0;
+                        wordFromText = "";
+                    }
+                    lettersInWord = 0;
+                    wordFromText = "";
+                }
+            }
         }
 
         protected bool IsLetter(char character)
