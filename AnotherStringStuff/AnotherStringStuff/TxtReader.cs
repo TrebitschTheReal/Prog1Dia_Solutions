@@ -7,11 +7,8 @@ using System.IO;
 
 namespace AnotherStringStuff
 {
-    class TxtReader
+    class TxtReader : StringOperations
     {
-        private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
-        private string numbers = "123456789";
-        private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         private string fullText = "";
         private int numberOfLines = 0;
         private int numberOfLetters = 0;
@@ -43,14 +40,11 @@ namespace AnotherStringStuff
         }
         private int LetterCounter()
         {
-            foreach (char ch in fullText)
+            for (int i = 0; i < fullText.Length; i++)
             {
-                for (int i = 0; i < letters.Length; i++)
+                if (IsLetter(fullText[i]))
                 {
-                    if (ch == letters[i] || ch == letters.ToUpper()[i])
-                    {
-                        numberOfLetters++;
-                    }
+                    numberOfLetters++;
                 }
             }
             return numberOfLetters;
@@ -59,12 +53,9 @@ namespace AnotherStringStuff
         {
             foreach (char ch in fullText)
             {
-                for (int i = 0; i < numbers.Length; i++)
+                if (IsNumber(ch))
                 {
-                    if (ch == numbers[i])
-                    {
-                        numberOfNumbers++;
-                    }
+                    numberOfNumbers++;
                 }
             }
             return numberOfNumbers;
@@ -76,14 +67,11 @@ namespace AnotherStringStuff
         }
         private int SpecialCharacterCounter()
         {
-            foreach(char ch in fullText)
+            for (int i = 0; i < fullText.Length; i++)
             {
-                for (int i = 0; i < specialCharacters.Length; i++)
+                if (IsSpecial(fullText[i]))
                 {
-                    if (ch == specialCharacters[i])
-                    {
-                        numberOfSpecialCharacters++;
-                    }
+                    numberOfSpecialCharacters++;
                 }
             }
             return numberOfSpecialCharacters;
@@ -113,28 +101,6 @@ namespace AnotherStringStuff
             }
 
             sw.Close();
-        }
-        private bool IsLetter(char character)
-        {
-            for (int i = 0; i < letters.Length; i++)
-            {
-                if (character == letters[i] || character == letters.ToUpper()[i])
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
-        private bool IsNumber(char character)
-        {
-            for (int i = 0; i < numbers.Length; i++)
-            {
-                if (character == numbers[i])
-                {
-                    return true;
-                }
-            }
-            return false;
         }
 
         public string FullText
