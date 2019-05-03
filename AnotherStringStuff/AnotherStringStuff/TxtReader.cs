@@ -11,11 +11,13 @@ namespace AnotherStringStuff
     {
         private string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private string numbers = "123456789";
+        private string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         private string fullText = "";
         private int numberOfLines = 0;
         private int numberOfLetters = 0;
         private int numberOfNumbers = 0;
         private int numberOfCharacters = 0;
+        private int numberOfSpecialCharacters = 0;
 
         public TxtReader()
         {
@@ -24,6 +26,7 @@ namespace AnotherStringStuff
             this.numberOfCharacters = CharacterCounter();
             this.numberOfLetters = LetterCounter();
             this.numberOfNumbers = NumberCounter();
+            this.numberOfSpecialCharacters = SpecialCharacterCounter();
         }
 
         private int LineCounter()
@@ -76,13 +79,27 @@ namespace AnotherStringStuff
             sr.Close();
             return numberOfCharacters;
         }
+        private int SpecialCharacterCounter()
+        {
+            foreach(char ch in fullText)
+            {
+                for (int i = 0; i < specialCharacters.Length; i++)
+                {
+                    if (ch == specialCharacters[i])
+                    {
+                        numberOfSpecialCharacters++;
+                    }
+                }
+            }
+            return numberOfSpecialCharacters;
+        }
         private string GenerateFullText()
         {
             StreamReader sr = new StreamReader(@"E:\maszkolgatunk\rimworld.txt", Encoding.Default);
             while (!sr.EndOfStream)
             {
                 string textPart = sr.ReadLine();
-                fullText += "\n" + textPart;
+                fullText += textPart;
             }
             sr.Close();
             return fullText;
@@ -107,6 +124,10 @@ namespace AnotherStringStuff
         public int NumberOfNumbers
         {
             get { return numberOfNumbers; }
+        }
+        public int NumberOfSpecialCharacters
+        {
+            get { return numberOfSpecialCharacters; }
         }
     }
 }
