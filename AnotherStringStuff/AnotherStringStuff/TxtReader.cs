@@ -51,6 +51,14 @@ namespace AnotherStringStuff
         {
             get { return numberOfWordsInText; }
         }
+        public string AllWords
+        {
+            get { return allWords[0]; }
+        }
+        public string TheLongest
+        {
+            get { return LongestWord(); }
+        }
 
         private int LineCounter()
         {
@@ -100,6 +108,38 @@ namespace AnotherStringStuff
                 }
             }
             return numberOfSpecialCharacters;
+        }
+        private string LongestWord()
+        {
+            string theLongestWord = "";
+            int theLongestWordLength = int.MinValue;
+            int theLongestWordIndex = 0;
+
+            for (int i = 0; i < allWords.Length; i++)
+            {
+                if (theLongestWordIndex < allWords[i].Length)
+                {
+                    theLongestWordLength = allWords[i].Length;
+                    theLongestWordIndex = i;
+                }
+            }
+            theLongestWord = allWords[theLongestWordIndex];
+            return theLongestWord;
+        }
+        private string MostCommonlyUsedWord()
+        {
+            string lastWord = "";
+            string theMostUsedWord = "";
+            int theMostCommonlyUsedWordTimes = 0;
+            int theLongestWordIndex = 0;
+
+            for (int i = 0; i < allWords.Length ; i++)
+            {
+
+            }
+
+
+            return theMostUsedWord;
         }
 
         private void GenerateTextWithLettersAndNumbersOnly()

@@ -19,6 +19,7 @@ namespace AnotherStringStuff
             Console.WriteLine("Számok száma: {0}", txtreader.NumberOfNumbers);
             Console.WriteLine("Speciális karakterek száma: {0}", txtreader.NumberOfSpecialCharacters);
             Console.WriteLine("Szavak száma: {0}", txtreader.WordsInText);
+            Console.WriteLine(txtreader.TheLongest);
 
             Console.ReadKey();
         }

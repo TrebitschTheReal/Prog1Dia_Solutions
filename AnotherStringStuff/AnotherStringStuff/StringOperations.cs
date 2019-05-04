@@ -5,21 +5,22 @@ using System.Collections;
 
 namespace AnotherStringStuff
 {
-    class StringOperations : OperationsWithWords
+    class StringOperations
     {
-        protected ArrayList words = new ArrayList();
+        private ArrayList words = new ArrayList();
         protected string fullText = "";
         private const string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private const string numbers = "0123456789";
         private const string specialCharacters = @"'+!%/=()~ˇˇ^^˘˘°°˛˛*-+`˙˙´´˝¨¸\|Ä€Í÷×äđĐ[]íłŁ$ß¤<>#&@{};>*?:_,.-";
         protected int numberOfWordsInText = 0;
+        protected string[] allWords;
 
         protected StringOperations()
         {
             this.fullText = GenerateFullText();
             this.numberOfWordsInText = CountTheWordsInText();
             GetTheWordsFromText();
-            string[] allWords = (string[])words.ToArray(typeof(string));
+            allWords = (string[])words.ToArray(typeof(string));
         }
 
         protected int CountTheWordsInText()
