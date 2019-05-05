@@ -12,14 +12,15 @@ namespace AnotherStringStuff
         static void Main(string[] args)
         {
             var txtreader = new TxtReader();
-
             Console.WriteLine("Sorok száma: {0}", txtreader.NumberOfLines);
             Console.WriteLine("Karakterek száma: {0}", txtreader.NumberOfCharacters);
             Console.WriteLine("Betűk száma: {0}", txtreader.NumberOfLetters);
             Console.WriteLine("Számok száma: {0}", txtreader.NumberOfNumbers);
             Console.WriteLine("Speciális karakterek száma: {0}", txtreader.NumberOfSpecialCharacters);
             Console.WriteLine("Szavak száma: {0}", txtreader.WordsInText);
-            Console.WriteLine(txtreader.TheLongest);
+            Console.WriteLine("A leghosszabb szó: {0}", txtreader.TheLongest);
+
+
 
             Console.ReadKey();
         }

@@ -77,7 +77,7 @@ namespace AnotherStringStuff
         }
         protected string GenerateFullText()
         {
-            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\rimworld.txt", Encoding.Default);
+            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\lotr.txt", Encoding.Default);
             while (!sr.EndOfStream)
             {
                 string textPart = sr.ReadLine();

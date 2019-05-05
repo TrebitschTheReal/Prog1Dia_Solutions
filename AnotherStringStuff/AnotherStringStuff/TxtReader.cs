@@ -62,7 +62,7 @@ namespace AnotherStringStuff
 
         private int LineCounter()
         {
-            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\rimworld.txt", Encoding.Default);
+            StreamReader sr = new StreamReader(@"E:\maszekolgatunk\lotr.txt", Encoding.Default);
             while (!sr.EndOfStream)
             {
                 sr.ReadLine();
@@ -117,7 +117,7 @@ namespace AnotherStringStuff
 
             for (int i = 0; i < allWords.Length; i++)
             {
-                if (theLongestWordIndex < allWords[i].Length)
+                if (theLongestWordLength < allWords[i].Length)
                 {
                     theLongestWordLength = allWords[i].Length;
                     theLongestWordIndex = i;
@@ -125,24 +125,6 @@ namespace AnotherStringStuff
             }
             theLongestWord = allWords[theLongestWordIndex];
             return theLongestWord;
-        }
-        private string MostCommonlyUsedWord()
-        {
-            string lastWord = "";
-            string theMostUsedWord = "";
-            int theMostCommonlyUsedWordTimes = 0;
-            int theLongestWordIndex = 0;
-
-            for (int i = 0; i < allWords.Length ; i++)
-            {
-                for (int j = 0; j < length; j++)
-                {
-
-                }
-            }
-
-
-            return theMostUsedWord;
         }
 
         private void GenerateTextWithLettersAndNumbersOnly()
