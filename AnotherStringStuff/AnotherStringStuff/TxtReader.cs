@@ -135,7 +135,10 @@ namespace AnotherStringStuff
 
             for (int i = 0; i < allWords.Length ; i++)
             {
+                for (int j = 0; j < length; j++)
+                {
 
+                }
             }
 
 

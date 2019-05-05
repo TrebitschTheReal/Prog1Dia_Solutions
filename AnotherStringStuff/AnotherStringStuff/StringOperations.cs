@@ -7,7 +7,7 @@ namespace AnotherStringStuff
 {
     class StringOperations
     {
-        private ArrayList words = new ArrayList();
+        protected ArrayList words = new ArrayList();
         protected string fullText = "";
         private const string letters = "qwertzuiopőúöüóasdfghjkléáűíyxcvbnm";
         private const string numbers = "0123456789";
